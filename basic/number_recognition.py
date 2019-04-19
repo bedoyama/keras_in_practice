@@ -1,5 +1,5 @@
 from __future__ import print_function
-import numpy as py
+import numpy as np
 from keras.datasets import mnist
 from keras.models import Sequential
 from keras.layers.core import Dense, Activation
@@ -48,3 +48,9 @@ model.add(Dense(NB_CLASSES, input_shape=(RESHAPED,)))
 model.add(Activation('softmax'))
 
 model.summary()
+
+model.compile(loss='categorical_crossentropy',
+	optimizer=OPTIMIZER,
+	metrics=['accuracy'])
+
+history = model.fit(X_train, Y_train, batch_size=BATCH_SIZE, epochs=NB_EPOCH, verbose=VERBOSE, validation_split=VALIDATION_SPLIT)
