@@ -54,3 +54,7 @@ model.compile(loss='categorical_crossentropy',
 	metrics=['accuracy'])
 
 history = model.fit(X_train, Y_train, batch_size=BATCH_SIZE, epochs=NB_EPOCH, verbose=VERBOSE, validation_split=VALIDATION_SPLIT)
+
+score = model.evaluate(X_test, Y_test, verbose=VERBOSE)
+print("Test score:", score[0])
+print("Test accuracy:", score[1])
