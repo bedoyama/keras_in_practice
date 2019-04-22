@@ -20,6 +20,7 @@ parts/
 sdist/
 var/
 wheels/
+basic/MNIST_data/**
 *.egg-info/
 .installed.cfg
 *.egg
